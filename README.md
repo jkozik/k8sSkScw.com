@@ -23,11 +23,13 @@ build:
 
 Note: most of the time this works.  But if you want to repull everything, the way Dockerfiles work, you need to pass it a no-cache option.  Uncomment the noCache: true line if this case arises.  For me, this case comes up if the weather software script provider, http://saratoga-weather.com, issues a new release. 
 
+It is useful to read the [skaffold.yaml documentation](https://skaffold.dev/docs/references/yaml/?version=v2beta19).  The above file takes advantage of all of the useful defaults.  For example, the skaffold tool checks for a Dockerfile and runs it. (Yes, docker needs to be installed!). Also, the tool will deploy to the default kubernetes cluster following the manifest files stored in the dafault k8s directory. All of these defaults can be overridden. 
+
 # Defaults
 ## skaffold
 On my host that runs kubectl, I installed skaffold from the root account following the [skaffold installation directions](https://skaffold.dev/docs/install/).
 
-SKaffold needs to be told which image repository to upload to. I use my docker one.
+Skaffold needs to be told which image repository to upload to. I use my docker one.
 ```
 skaffold config set default-repo docker.io/jkozik
 ```
