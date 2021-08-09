@@ -1,0 +1,10 @@
+apiVersion: skaffold/v2beta20
+kind: Config
+metadata:
+  name: installscw.com
+build:
+  artifacts:
+  - image: jkozik/scw.com
+    docker:
+#      noCache=true to rebuild everything.  
+#      noCache: true
